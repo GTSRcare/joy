@@ -1,13 +1,14 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const userRoutes = require("./routes/userRoutes.js");
 
 // Body parsing, query string parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
+app.use("/users", userRoutes);
+// app.use("/compliments", complimentRoutes);
 
 // Global error handling middleware
 app.use((err, req, res, next) => {

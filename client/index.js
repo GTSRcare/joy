@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 render(
   <BrowserRouter>
-    <App />,
+    <App />
   </BrowserRouter>,
   
 document.getElementById("root")
@@ -36,4 +36,5 @@ render(
 
 
 
+render(<App />, document.getElementById("root"));
 */
