@@ -18,7 +18,7 @@ export const loginActionCreator = (username, password) => {
   axios
     .post('/users/login', options)
     .then((response) =>
-      dispatchEvent({ type: types.LOGIN, payload: response.data.user_id })
+      dispatch({ type: types.LOGIN, payload: response.data.user_id })
     );
 };
 
@@ -27,7 +27,7 @@ export const signUpActionCreator = (name, username, password) => {
   axios
     .post('/users/signup', options)
     .then((response) =>
-      dispatchEvent({ type: types.SIGN_UP, payload: response.data.user_id })
+      dispatch({ type: types.SIGN_UP, payload: response.data.user_id })
     );
 };
 
@@ -39,7 +39,7 @@ export const getComplimentActionCreator = (user, tag) => {
     URL += `&tag=${tag}`;
   }
   axios.get(URL, body).then((response) =>
-    dispatchEvent({
+    dispatch({
       type: type.GET_COMPLIMENT,
       payload: response.data.complimentsList,
     })
@@ -78,12 +78,10 @@ export const patchComplimentActionCreator = (
 ) => {
   const URL = `/compliments?user=${user}&id=${id}`;
   const body = { message, sender, category };
-  axios
-    .patch(URL, body)
-    .then((response) =>
-      dispatch({
-        type: type.PATCH_COMPLIMENT,
-        payload: response.data.compliment,
-      })
-    );
+  axios.patch(URL, body).then((response) =>
+    dispatch({
+      type: type.PATCH_COMPLIMENT,
+      payload: response.data.compliment,
+    })
+  );
 };
