@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const userRoutes = require('./routes/userRoutes.js');
 const complimentRoutes = require('./routes/complimentRoutes.js');
+
 // Body parsing, query string parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
