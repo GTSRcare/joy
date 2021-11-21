@@ -1,23 +1,15 @@
 .login {
-  margin-top: 10%;
+  margin-top: 20%;
   background-color: whitesmoke;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   font-weight: bolder;
   text-align: center;
 }
-
 body {
   background-color: whitesmoke;
-  font-size: 22px;
+  font-size: 22 px;
 }
-
-input {
-  padding: 10px 5px;
-  border-radius: 0.25em;
-  font-size: 18px;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -69,9 +61,4 @@ input {
   color: white;
   border-radius: 0.25em;
   size-adjust: 25%;
-  padding: 8px 15px;
-  border: none;
-  font-size: 18px;
-  margin-top: 15px;
-  cursor: pointer;
 }
