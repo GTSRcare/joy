@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import { Redirect } from "react-router";
-
+import { Navigate } from "react-router";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -26,20 +25,20 @@ class Login extends Component {
       })
     };
     
-    // // Make POST request to backend /users/login
-    // fetch('/users/login', optionsObject)
-    //   .then(data => data.json()) // response = { user_id: 4 } 
-    //   .then(response => this.setState({ username: response.user_id }))
-    //   .catch(err => {
-    //     console.log(`Error logging in: ${err}`);
-    //   });
+    // Make POST request to backend /users/login
+    fetch('/users/login', optionsObject)
+      .then(data => data.json()) // response = { user_id: 4 } 
+      .then(response => this.setState({ user_id: response.user_id }))
+      .catch(err => {
+        console.log(`Error logging in: ${err}`);
+      });
   }
 
   render() {
     //render logic goes here?
     
     return (
-      // (this.state.user_id ? <Redirect to='/dashboard' /> : 
+      (this.state.user_id ? <Navigate to='/dashboard' /> : 
       <div className="login">
         <h2 className="silly" >Login Page</h2>
         <form>
@@ -52,10 +51,10 @@ class Login extends Component {
         </form>
         
         <button onClick={(this.handleClick)}>
-          login
+          Log In
         </button>
       </div>
-    // )
+    )
     );
   }
 }
