@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router";
+import "../styles.css";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -40,18 +41,23 @@ class Login extends Component {
     return (
       (this.state.user_id ? <Navigate to='/dashboard' /> : 
       <div className="login">
-        <h2 className="silly" >Login Page</h2>
-        <form>
-          <label>Username
+        <h2 className="silly" >Log In</h2>
+        <form class="container">
+
+          <label class="container" id='field-container'>
+            <div id='loginUsername'>Username</div>
             <input type = "text" id='username' />
           </label>
       
-          <label>Password</label>
-          <input type='password' id ='password' />
+          <label class="container" id='field-container'>
+          <div id='loginPassword'> Password</div>
+            <input type='password' id ='password' />
+          </label>
+          
         </form>
         
-        <button onClick={(this.handleClick)}>
-          Log In
+        <button id="loginButton" onClick={(this.handleClick)}>
+          <div > Submit </div>
         </button>
       </div>
     )

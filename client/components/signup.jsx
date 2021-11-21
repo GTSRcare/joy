@@ -42,24 +42,28 @@ class Signup extends Component {
 
   render() {
     return (
-      (this.state.user_id ? <Navigate to='/dashboard' /> :
-        <div className="signUp">
-        <form>
-        <label>Name</label>
-          <input type='text' id ='name' />
+      (this.state.user_id ? <Navigate to='/dashboard' /> : 
+      <div className="login">
+        <h2 className="silly" >Sign Up</h2>
+        <form class="container">
 
-          <label>Username</label>
+          <label class="container" id='field-container'>
+            <div id='loginUsername'>Username</div>
             <input type = "text" id='username' />
+          </label>
+      
+          <label class="container" id='field-container'>
+          <div id='loginPassword'> Password</div>
+            <input type='password' id ='password' />
+          </label>
           
-          <label>Password</label>
-          <input type='password' id ='password' />
         </form>
         
-        <button onClick={(this.handleClick)}>
-          Sign up
+        <button id="loginButton" onClick={(this.handleClick)}>
+          <div > Submit </div>
         </button>
       </div>
-      )
+    )
     );
   }
 }
