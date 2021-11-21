@@ -3,19 +3,26 @@
   background-color: whitesmoke;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   text-align: center;
 }
 
 body {
   background-color: whitesmoke;
   font-size: 22px;
+  padding: 0;
+  margin: 0;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  'Lucida Sans', Arial, sans-serif; */
+  font-family: 'Roboto', 'sans-serif';
 }
 
 input {
-  padding: 10px 5px;
+  padding: 12px 5px;
   border-radius: 0.25em;
   font-size: 18px;
+  margin: 10px 0px;
+  background-color: white;
 }
 
 .container {
@@ -30,6 +37,13 @@ input {
   justify-content: center;
   height: 5em;
   background-color: whitesmoke;
+}
+
+#loginName {
+  align-self: flex-start;
+  margin-left: 25%;
+  margin-right: 25%;
+  color: grey;
 }
 
 #loginUsername {
@@ -51,15 +65,25 @@ input {
   margin-left: 25%;
   margin-right: 25%;
   width: 50%;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   border: solid rgb(196, 194, 194);
 }
+
 #username {
   align-self: flex-start;
   margin-left: 25%;
   margin-right: 25%;
   width: 50%;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
+  border: solid rgb(196, 194, 194);
+}
+
+#name {
+  align-self: flex-start;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  /* background-color: whitesmoke; */
   border: solid rgb(196, 194, 194);
 }
 
@@ -69,9 +93,27 @@ input {
   color: white;
   border-radius: 0.25em;
   size-adjust: 25%;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border: none;
   font-size: 18px;
   margin-top: 15px;
   cursor: pointer;
+  font-family: inherit;
+}
+/* *********************** MARGIN AND PADDING ***************************** */
+
+/* *********************** NAVBAR STYLE ***************************** */
+nav {
+  background-color: #003694;
+  padding: 0;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  margin-right: 50px;
 }
