@@ -17,9 +17,9 @@ router.post('/', complimentController.postCompliment, (req, res) => {
   return res.json({ compliment: res.locals.compliment });
 });
 
-router.get('/tags', complimentController.getTags, (req, res) => {
-  return res.json({ tags: res.locals.tags });
-});
+// router.get('/tags', complimentController.getTags, (req, res) => {
+//   return res.json({ tags: res.locals.tags });
+// });
 
 router.patch('/', complimentController.updateCompliment, (req, res) => {
   return res.json({ compliment: res.locals.compliment });
