@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { Redirect } from "react-router";
-
+import { Navigate } from "react-router";
+import "../styles.css";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -26,36 +26,41 @@ class Login extends Component {
       })
     };
     
-    // // Make POST request to backend /users/login
-    // fetch('/users/login', optionsObject)
-    //   .then(data => data.json()) // response = { user_id: 4 } 
-    //   .then(response => this.setState({ username: response.user_id }))
-    //   .catch(err => {
-    //     console.log(`Error logging in: ${err}`);
-    //   });
+    // Make POST request to backend /users/login
+    fetch('/users/login', optionsObject)
+      .then(data => data.json()) // response = { user_id: 4 } 
+      .then(response => this.setState({ user_id: response.user_id }))
+      .catch(err => {
+        console.log(`Error logging in: ${err}`);
+      });
   }
 
   render() {
     //render logic goes here?
     
     return (
-      // (this.state.user_id ? <Redirect to='/dashboard' /> : 
+      (this.state.user_id ? <Navigate to='/dashboard' /> : 
       <div className="login">
-        <h2 className="silly" >Login Page</h2>
-        <form>
-          <label>Username
+        <h2 className="silly" >Log In</h2>
+        <form class="container">
+
+          <label class="container" id='field-container'>
+            <div id='loginUsername'>Username</div>
             <input type = "text" id='username' />
           </label>
       
-          <label>Password</label>
-          <input type='password' id ='password' />
+          <label class="container" id='field-container'>
+          <div id='loginPassword'> Password</div>
+            <input type='password' id ='password' />
+          </label>
+          
         </form>
         
-        <button onClick={(this.handleClick)}>
-          login
+        <button id="loginButton" onClick={(this.handleClick)}>
+          <div > Submit </div>
         </button>
       </div>
-    // )
+    )
     );
   }
 }
