@@ -1,27 +1,29 @@
-import React, { Component } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Component } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Login from './components/login.jsx';
 import Signup from './components/signup.jsx';
-import Dashboard from "./components/Dashboard.jsx";
+import Dashboard from './components/Dashboard.jsx';
+import ComplimentsList from './components/ComplimentsList.jsx';
+import ComplimentsForm from './components/ComplimentsForm.jsx';
+
 class App extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    
     return (
       <Routes>
-        <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/view' element={<ComplimentsList />} />
+        <Route path='/add' element={<ComplimentsForm />} />
+        <Route path='/' element={<Login />} />
       </Routes>
-    )
+    );
   }
 }
 
 export default App;
-
-
 
 /*
 
@@ -43,4 +45,3 @@ render(
 
 
 */
-

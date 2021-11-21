@@ -1,22 +1,22 @@
 // Main dashboard after logging in
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import NavBar from './NavBar.jsx';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_id: null
-    }
-} 
+      user_id: null,
+    };
+  }
 
   render() {
     return (
-    <div className="dashBoard">
-      <h2>Hello Dashboard</h2>
-    </div>
+      <div>
+        <NavBar />
+      </div>
     );
   }
 }
 
-// export default Login;
 export default Dashboard;
