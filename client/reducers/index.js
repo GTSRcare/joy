@@ -5,7 +5,7 @@ import complimentReducer from './complimentReducer';
 
 // combine reducers
 const reducers = combineReducers({
-  store: complimentReducer,
+  compliments: complimentReducer,
 });
 
 // make the combined reducers available for import

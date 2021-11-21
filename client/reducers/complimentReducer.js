@@ -13,8 +13,8 @@ import * as types from '../constants/actionTypes';
 // export const PATCH_COMPLIMENT = 'PATCH_COMPLIMENT';
 const initialState = {
   complimentsList: [],
-  user_id: [],
-  tagList: [],
+  user_id: null,
+  tagsList: [],
 };
 
 const complimentReducer = (state = initialState, action) => {
@@ -35,21 +35,23 @@ const complimentReducer = (state = initialState, action) => {
         action.payload
       );
       return { ...state, complimentsList: newComplimentsList };
-    case types.PATCH_COMPLIMENT:
+    case types.PATCH_COMPLIMENT: {
       //update patched compliment in compliment list
       const newComplimentsList = [...state.complimentsList].map((obj) => {
         if (obj.id === action.payload.id)
           return Object.assign({}, obj, action.payload);
         else return obj;
       });
+    }
       return { ...state, complimentsList: newComplimentsList };
-    case types.DELETE_COMPLIMENT:
+    case types.DELETE_COMPLIMENT: {
       //remove deleted compliment from compliment list
       const newComplimentsList = [...state.complimentsList].filter(
         (obj) => obj.id !== action.payload
       );
       return { ...state, complimentsList: newComplimentsList };
-
+    }
+    
     default:
       return state;
   }
