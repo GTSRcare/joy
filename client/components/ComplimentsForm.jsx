@@ -73,7 +73,6 @@ class ComplimentsForm extends Component {
                 <option value='General'>General</option>
                 <option value='Personality'>Personality</option>
                 <option value='Redux'>Redux</option>
-                <option value='webpack'>webpack</option>
               </select>
             </div>
             </div>

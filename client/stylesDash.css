@@ -8,7 +8,6 @@
   align-items: center;
   background-color: rgb(167, 201, 87);
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
 .general-compliment {
@@ -19,8 +18,11 @@
 .select {
   color: rgb(12, 27, 51);
 }
+#grabComplimentButton {
+  background-color: rgb(224, 193, 179);
+}
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 16px;
   font-size: 16px;

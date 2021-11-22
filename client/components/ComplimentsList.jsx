@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NavBar from './NavBar.jsx';
 import ComplimentCard from './ComplimentCard.jsx';
-import { deleteComplimentActionCreator, patchComplimentActionCreator } from '../actions/action.js';
+import { deleteComplimentActionCreator, patchComplimentActionCreator, getComplimentActionCreator } from '../actions/action.js';
 
 // Map state to props 
 const mapStateToProps = state => ({
@@ -14,11 +14,17 @@ const mapStateToProps = state => ({
 
 // Map dispatch to props - delete handler 
 const mapDispatchToProps = dispatch => ({
+  getCompliments: (user_id) => dispatch(getComplimentActionCreator(user_id)),
   deleteCompliment: (user_id, id) => dispatch(deleteComplimentActionCreator(user_id, id)), 
   updateCompliment: (user, id, category) => dispatch(patchComplimentActionCreator(user, id, category))
 });
 
 class ComplimentsList extends Component {
+
+  componentDidMount() {
+    this.props.getCompliments(this.props.user_id);
+  }
+  
   render() {
     const allCompliments = [];
     this.props.complimentsList.forEach((compliment) => {
