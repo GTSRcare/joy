@@ -28,7 +28,7 @@ complimentController.getCompliments = async (req, res, next) => {
   try {
     const response = await db.query(queryString);
     res.locals.complimentsList = response.rows;
-    console.log(res.locals.complimentsList);
+    //console.log(res.locals.complimentsList);
     return next();
   } catch (err) {
     return next({
@@ -46,7 +46,7 @@ complimentController.getTags = async (req, res, next) => {
   // WHERE compliments.users_id = ${user}`;
   try {
     const response = await db.query(queryString);
-    console.log(response);
+    //console.log(response);
     res.locals.tags = response.rows.map((obj) => obj.tag);
     return next();
   } catch (err) {
@@ -81,9 +81,9 @@ complimentController.postCompliment = async (req, res, next) => {
   const values = [categoryId.rows[0].id, message, sender, date, user];
   try {
     const newCompliment = await db.query(queryString, values);
-    console.log(newCompliment);
+    const tag = await db.query(`SELECT title FROM category WHERE id = '${newCompliment.rows[0].category_id}'`)
     res.locals.compliment = newCompliment.rows[0];
-    console.log(res.locals.compliment);
+    res.locals.compliment['tag'] = tag.rows[0].title;
     return next();
   } catch (err) {
     return next({
@@ -97,7 +97,7 @@ complimentController.updateCompliment = async (req, res, next) => {
   const { user, id } = req.query;
   const { message, sender, category } = req.body;
   const toUpdate = [];
-  console.log(category);
+  //console.log(category);
   if (message) toUpdate.push(`message='${message}'`);
   if (sender) toUpdate.push(`sender='${sender}'`);
   if (category) {
@@ -123,6 +123,8 @@ complimentController.updateCompliment = async (req, res, next) => {
   try {
     const updated = await db.query(queryString);
     res.locals.compliment = updated.rows[0];
+    const tag = await db.query(`SELECT title FROM category WHERE id = '${res.locals.compliment.category_id}'`)
+    res.locals.compliment['tag'] = tag.rows[0].title;
     return next();
   } catch (err) {
     return next({

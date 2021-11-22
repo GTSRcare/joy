@@ -18,6 +18,7 @@ class App extends Component {
         <Route path='/view' element={<ComplimentsList />} />
         <Route path='/add' element={<ComplimentsForm />} />
         <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<signUpButton />} />
       </Routes>
     );
   }
@@ -26,6 +27,10 @@ class App extends Component {
 export default App;
 
 /*
+
+<Link to=‘/signup’> Sign Up </Link>
+
+
 
 render(
   <Provider store={store}>

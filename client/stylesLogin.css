@@ -100,11 +100,27 @@ input {
   cursor: pointer;
   font-family: inherit;
 }
+
+
+#signUpButton{
+  background-color: rgb(231, 158, 221);
+  text-emphasis-color: white;
+  color: white;
+  border-radius: 0.25em;
+  size-adjust: 25%;
+  padding: 10px 20px;
+  border: none;
+  font-size: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-family: inherit;
+
+}
 /* *********************** MARGIN AND PADDING ***************************** */
 
 /* *********************** NAVBAR STYLE ***************************** */
 nav {
-  background-color: #003694;
+  background-color: rgb(12, 27, 51);
   padding: 0;
   margin: 0;
   padding: 20px;
