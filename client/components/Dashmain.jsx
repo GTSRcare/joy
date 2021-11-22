@@ -20,11 +20,11 @@ class Dashmain extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit() {
-    const category = document.getElementById('dashCategory').value;
+  handleChange() {
+    const category = document.getElementById('bigButton').value;
     const user_id = this.props.user_id;
     const tag = this.props.tag;
     this.props.grabCompliment(user_id, category);
@@ -32,24 +32,30 @@ class Dashmain extends Component {
 
   render() {
     return (
-      <div>
+      <div className="dashContainerBackground">
+        
         <div className='spacer'/>
         <div className='dash-container' > 
-          <div className= "randomCompliment">{this.props.randomCompliment.message}</div>
+          <div className= "randomCompliment">{this.props.randomCompliment ? this.props.randomCompliment.message : 'No Compliment'}</div>
+          
           <div id="pick">
-            <label className="text">Pick a Category:</label>
-            <select id='dashCategory' name='dashCategory'>
-              <option value='Webpack'>Webpack</option>
-              <option value='General'>General</option>
-              <option value='Personality'>Personality</option>
-              <option value='Redux'>Redux</option>
-            </select>
+            <div className="pickCategoryLabel">
+            <label className="text2">Pick a Category: </label>
+            </div>
+            <div className='margin-left-sm'>
+              <select id='bigButton' onChange={this.handleChange}>
+                <option value='Webpack'>Webpack</option>
+                <option value='General'>General</option>
+                <option value='Personality'>Personality</option>
+                <option value='Redux'>Redux</option>
+              </select>
+              </div>
           </div>
+    
         </div>
-        <button id='grabComplimentButton' onClick={this.handleSubmit}>
-            Submit
-        </button>
+
         <div className='spacer2'/>
+      
       </div>
     );
   }

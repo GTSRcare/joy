@@ -1,12 +1,12 @@
 .spacer {
   height: 10em;
-  background-color: rgb(98, 182, 203);
+  /* background-color: rgb(98, 182, 203); */
 }
 .dash-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: rgb(167, 201, 87);
+  align-items: flex-start;
+  /* background-color: rgb(167, 201, 87); */
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -18,9 +18,24 @@
 .select {
   color: rgb(12, 27, 51);
 }
-#grabComplimentButton {
-  background-color: rgb(224, 193, 179);
+#submitButtonHolder {
+  /* background-color: rgb(224, 193, 179); */
+  display: flex;
 }
+#grabComplimentButton {
+  background-color: rgb(59, 131, 240);
+  color: white;
+  border-radius: 0.25em;
+  padding: 10px 10px;
+  border: none;
+  font-size: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-left: 45%;
+  margin-inline-start: center;
+}
+
 .dropbtn {
   background-color: #4caf50;
   color: white;
@@ -28,8 +43,87 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+  width: max-content;
 }
 .spacer2 {
   height: 10em;
-  background-color: rgb(110, 103, 95);
+  /* background-color: rgb(110, 103, 95); */
+}
+
+.randomCompliment {
+  margin: 10px;
+  font-style: italic;
+  align-self: center;
+}
+#category-select {
+  width: 410px;
+  font-family: inherit;
+  font-size: inherit;
+  padding-block: 10px;
+  margin-left: 5px;
+  border-radius: 0.25em;
+  padding-inline: 15px;
+}
+.categoryPicking {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 70px;
+  margin-top: 30px;
+}
+
+#bigButton {
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  padding-block: 10px;
+  border-radius: 0.25em;
+  padding-inline: 15px;
+  margin-bottom: 15px;
+  color: rgb(110, 103, 95);
+  background-color: rgb(98, 182, 203);
+}
+
+#pick {
+  margin-left: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.dropdownPicking2 {
+  width: 410px;
+  font-family: inherit;
+  font-size: inherit;
+  padding-block: 10px;
+  margin-left: 50%;
+  border-radius: 0.25em;
+  padding-inline: 15px;
+}
+.text2 {
+  margin-top: 50px;
+  color: rgb(110, 103, 95);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashContainerBackground {
+  height: 100vh;
+  background-image: linear-gradient(
+    180deg,
+    rgb(12, 27, 51),
+    rgb(98, 182, 203),
+    rgb(167, 201, 87),
+    rgb(110, 103, 95)
+  );
+}
+.randomCompliment {
+  color: whitesmoke;
+  /* font-family: 'Homemade Apple', cursive; */
+  /* font-family: 'Cabin', sans-serif; */
+  font-family: 'Estonia', cursive;
+  /* font-size: xx-large; */
+  font-size: 80px;
+  margin-bottom: 30px;
+  text-align: center;
 }

@@ -15,7 +15,6 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => ({
   user_id: state.compliments.user_id
 })
-
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -52,18 +51,14 @@ class Login extends Component {
         </form>
 
         <button id='loginButton' onClick={this.handleClick}>
-          <div> Submit </div>
+          <div> Log In </div>
         </button>
 
-        {/* <button id='signUpButton' onClick={this.handleClick}>
-          <div> Here to sign up </div>
-        </button> */}
-        <Link to='/signup'>Sign Up </Link>
+        <Link to='/signup' className='signup-link'>Sign Up </Link>
       </div>
     )
     )
   }
 }
 
-// export default Login;
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

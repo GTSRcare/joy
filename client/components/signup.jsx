@@ -1,5 +1,20 @@
 import React, { Component } from 'react';
 import { Navigate } from 'react-router';
+import { signUpActionCreator } from '../actions/action';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+// mapStateToProps 
+const mapStateToProps = state => ({
+  user_id: state.compliments.user_id
+})
+
+// mapDispatchToProps
+const mapDispatchToProps = dispatch => ({
+  submitSignup: (name, username, password) => dispatch(signUpActionCreator(name, username, password))
+});
+
+
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -15,32 +30,12 @@ class Signup extends Component {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Signup method; make request to backend POST /users/signup
-    const optionsObject = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        username,
-        password,
-      }),
-    };
-
-    // Fetch request
-    fetch('/users/signup', optionsObject)
-      .then((data) => data.json())
-      .then((response) => {
-        this.setState({ user_id: response.user_id });
-      })
-      .catch((err) => {
-        console.log(`Signup Form Err: ${err}`);
-      });
+    // // Signup method; make request to backend POST /users/signup
+    this.props.submitSignup(name, username, password)
   }
 
   render() {
-    return this.state.user_id ? (
+    return this.props.user_id ? (
       <Navigate to='/dashboard' />
     ) : (
       <div className='login'>
@@ -63,12 +58,13 @@ class Signup extends Component {
         </form>
 
         <button id='loginButton' onClick={this.handleClick}>
-          <div> Submit </div>
+          <div> Sign Up </div>
         </button>
+
+        <Link to='/' className='signup-link'>Log In</Link>
       </div>
     );
   }
 }
 
-// export default Login;
-export default Signup;
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

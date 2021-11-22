@@ -102,8 +102,7 @@ input {
   margin-right: 15px;
 }
 
-
-#signUpButton{
+#signUpButton {
   background-color: rgb(231, 158, 221);
   text-emphasis-color: white;
   color: white;
@@ -115,7 +114,6 @@ input {
   margin-top: 15px;
   cursor: pointer;
   font-family: inherit;
-
 }
 /* *********************** MARGIN AND PADDING ***************************** */
 
@@ -133,4 +131,9 @@ nav a {
   text-decoration: none;
   font-weight: 300;
   margin-right: 50px;
+}
+
+.signup-link {
+  color: rgb(59, 131, 240);
+  text-decoration: none;
 }

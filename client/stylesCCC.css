@@ -17,13 +17,12 @@
   border: black
 } */
 
-
-.text{
+.text {
   color: rgb(12, 27, 51);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#createComplimentButton{
+#createComplimentButton {
   background-color: rgb(59, 131, 240);
   text-emphasis-color: white;
   color: white;
@@ -38,35 +37,41 @@
   margin-left: 220px;
 }
 
-#category{
+#category {
   height: 2.5em;
   width: 50%;
   align-self: baseline;
   font-size: medium;
 }
-
 /* #pick {
-  display: flex;
-  flex-direction: row;
-  height: 50%;
-  background-color: pink;
-} */
+  background-color: rgb(59, 131, 240);
+  text-emphasis-color: white;
+  color: white;
+  border-radius: 0.25em;
+  size-adjust: 25%;
+  padding: 10px 10px;
+  border: none;
+  font-size: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-family: inherit;
+}  */
 
 .ComplimentsForm {
   width: 600px;
 }
 
-input[type='text'], input[type='select'] {
+input[type='text'],
+input[type='select'] {
   width: 400px;
 }
 
-.senderDiv{
+.senderDiv {
   text-align: right;
   width: max-content;
   margin-left: auto;
   margin-right: 70px;
 }
-
 
 .messageDiv {
   text-align: right;
@@ -99,7 +104,6 @@ input[type='text'], input[type='select'] {
   border-radius: 0.25em;
   padding-inline: 15px;
 }
-
 
 /* ********************* COMPLIMENT CARD STYLES *********************** */
 .card-container {
@@ -153,4 +157,27 @@ input[type='text'], input[type='select'] {
 
 .margin-left-sm {
   margin-left: 15px;
+}
+
+.edit-select {
+  padding: 5px 10px;
+  font-size: smaller;
+  font-family: inherit;
+}
+
+#dashCategory-filter {
+  width: 300px;
+  font-family: inherit;
+  font-size: smaller;
+  padding-block: 10px;
+  margin-left: 5px;
+  border-radius: 0.25em;
+  padding-inline: 15px;
+  margin-top: 20px;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+  width: max-content;
+  margin-right: 30px;
 }
