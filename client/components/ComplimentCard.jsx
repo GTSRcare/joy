@@ -37,13 +37,13 @@ class ComplimentCard extends React.Component{
     }
     return (
         <div className='card-container'>
-          <div className='secondary-text margin-top-sm'>Date: {date}</div>
+          <div className='secondary-text margin-top-sm'>Date: {date.slice(0,10)}</div>
           <div className='primary-text margin-top-sm'>Message: {message}</div>
           <div className='primary-text margin-top-sm'>From: {sender}</div>
 
             {!this.state.editMode ? <div className='margin-top-sm secondary-text'>Category: {tag}</div> : 
             <form className='margin-top-sm'>
-              <select id='tag' name='tag' defaultValue='Webpack'>
+              <select id='tag' name='tag' className='edit-select' defaultValue='Webpack'>
                 {options}
               </select>
             </form>

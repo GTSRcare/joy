@@ -51,7 +51,9 @@ export const getComplimentActionCreator = (user, tag) => {
     }
     axios.get(URL, body).then((response) => {
       console.log('res dot data:', response.data);
-      const randomIndex = Math.floor(Math.random() * response.data.complimentsList.length);
+      const randomIndex = Math.floor(
+        Math.random() * response.data.complimentsList.length
+      );
       console.log('randomIndex:', randomIndex);
       const randomCompliment = response.data.complimentsList[randomIndex];
       dispatch({
