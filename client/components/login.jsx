@@ -54,9 +54,10 @@ class Login extends Component {
           <div> Submit </div>
         </button>
 
-        <button id='signUpButton' onClick={this.handleClick}>
+        {/* <button id='signUpButton' onClick={this.handleClick}>
           <div> Here to sign up </div>
-        </button>
+        </button> */}
+        <Link to='/signup'>Sign Up </Link>
       </div>
     )
     )
