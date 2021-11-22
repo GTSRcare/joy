@@ -18,7 +18,7 @@ class App extends Component {
         <Route path='/view' element={<ComplimentsList />} />
         <Route path='/add' element={<ComplimentsForm />} />
         <Route path='/' element={<Login />} />
-        <Route path='/signup' element={<signUpButton />} />
+
       </Routes>
     );
   }

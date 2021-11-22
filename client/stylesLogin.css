@@ -96,9 +96,10 @@ input {
   padding: 10px 20px;
   border: none;
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 10px;
   cursor: pointer;
   font-family: inherit;
+  margin-right: 15px;
 }
 
 

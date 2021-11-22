@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navigate } from 'react-router';
 import { connect } from 'react-redux';
 import { loginActionCreator } from '../actions/action';
+import { Link } from 'react-router-dom';
 
 import '../stylesLogin.css';
 
@@ -54,9 +55,10 @@ class Login extends Component {
           <div> Submit </div>
         </button>
 
-        <button id='signUpButton' onClick={this.handleClick}>
+        {/* <button id='signUpButton' onClick={this.handleClick}>
           <div> Here to sign up </div>
-        </button>
+        </button> */}
+        <Link to='/signup'>Sign Up </Link>
       </div>
     )
     )

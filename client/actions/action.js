@@ -36,18 +36,19 @@ export const signUpActionCreator = (name, username, password) => {
 
 export const getComplimentActionCreator = (user, tag) => {
   return function(dispatch){
-  const URL = `/compliments?user=${user}`;
+  let URL = `/compliments?user=${user}`;
   const body = { user };
   if (tag) {
     body.tag = tag;
     URL += `&tag=${tag}`;
   }
-  axios.get(URL, body).then((response) =>
+  axios.get(URL, body).then((response) => {
+    console.log(response.data)
     dispatch({
       type: types.GET_COMPLIMENT,
-      payload: response.data.complimentsList,
+      payload: response.data,
     })
-  );
+  });
   }
 };
 

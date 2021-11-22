@@ -16,7 +16,6 @@ class ComplimentCard extends React.Component{
   }
 
   handleSubmit() {
-    console.log('submit');
     const newCategory = document.getElementById('tag').value;
     // send user, id 
     const { user_id, id } = this.props;
@@ -37,24 +36,24 @@ class ComplimentCard extends React.Component{
       }
     }
     return (
-        <div>
-          <span>{date}</span>
-            <span>{message}</span>
-            <span>{sender}</span>
+        <div className='card-container'>
+          <div className='secondary-text margin-top-sm'>Date: {date}</div>
+          <div className='primary-text margin-top-sm'>Message: {message}</div>
+          <div className='primary-text margin-top-sm'>From: {sender}</div>
 
-            {!this.state.editMode ? <span>{tag}</span> : 
-            <form>
+            {!this.state.editMode ? <div className='margin-top-sm secondary-text'>Category: {tag}</div> : 
+            <form className='margin-top-sm'>
               <select id='tag' name='tag'>
                 {options}
               </select>
             </form>
             }
 
-            {!this.state.editMode ? <button onClick={this.handleEdit}>Edit Item</button> : 
-              <button onClick={() => this.handleSubmit()}>Submit</button>
+            {!this.state.editMode ? <button className='margin-top-sm primary-button' onClick={this.handleEdit}>Change Category</button> : 
+              <button className='margin-top-sm primary-button' onClick={() => this.handleSubmit()}>Submit</button>
             }
 
-            <button onClick={() => deleteCompliment(user_id, id)}>Delete Item</button>
+            <button className='margin-top-sm secondary-button margin-left-sm' onClick={() => deleteCompliment(user_id, id)}>Delete Compliment</button>
 
         </div>
     )
