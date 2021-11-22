@@ -30,9 +30,9 @@ class ComplimentCard extends React.Component{
   
     for (const currTag of tagsList) {
       if (currTag === tag) {
-        options.push(<option value={currTag} selected='selected'>{currTag}</option>)
+        options.push(<option value={currTag} key={currTag}>{currTag}</option>)
       } else {
-        options.push(<option value={currTag}>{currTag}</option>)
+        options.push(<option value={currTag} key={currTag}>{currTag}</option>)
       }
     }
     return (
@@ -43,7 +43,7 @@ class ComplimentCard extends React.Component{
 
             {!this.state.editMode ? <div className='margin-top-sm secondary-text'>Category: {tag}</div> : 
             <form className='margin-top-sm'>
-              <select id='tag' name='tag'>
+              <select id='tag' name='tag' defaultValue='Webpack'>
                 {options}
               </select>
             </form>
