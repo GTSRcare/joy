@@ -1,0 +1,33 @@
+.spacer {
+  height: 10em;
+  background-color: rgb(98, 182, 203);
+}
+.dash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(167, 201, 87);
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.general-compliment {
+  color: rgb(12, 27, 51);
+  font-style: italic;
+}
+
+.select {
+  color: rgb(12, 27, 51);
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.spacer2 {
+  height: 10em;
+  background-color: rgb(110, 103, 95);
+}

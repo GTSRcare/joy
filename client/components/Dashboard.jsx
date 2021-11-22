@@ -1,7 +1,7 @@
 // Main dashboard after logging in
 import React, { Component } from 'react';
 import NavBar from './NavBar.jsx';
-
+import Dashmain from './Dashmain.jsx';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +14,7 @@ class Dashboard extends Component {
     return (
       <div>
         <NavBar />
+        <Dashmain />
       </div>
     );
   }

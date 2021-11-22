@@ -5,33 +5,37 @@
 import * as types from '../constants/actionTypes';
 import axios from 'axios';
 
-// export const addCardActionCreator = marketId => ({
-//   type: types.ADD_CARD,
-//   payload: marketId,
-// });
-
 export const loginActionCreator = (username, password) => {
-  const options = {
-    username,
-    password,
-  };
-  axios
-    .post('/users/login', options)
-    .then((response) =>
-      dispatch({ type: types.LOGIN, payload: response.data.user_id })
-    );
+  return function(dispatch){
+    const options = {
+      username,
+      password,
+    };
+    axios
+      .post('/users/login', options)
+      .then((response) => {
+        console.log(response);
+        dispatch({ type: types.LOGIN, payload: response.data});
+      }
+        
+      );
+  }
+  
 };
 
 export const signUpActionCreator = (name, username, password) => {
+  return function(dispatch){
   const options = { username, password, name };
   axios
     .post('/users/signup', options)
     .then((response) =>
-      dispatch({ type: types.SIGN_UP, payload: response.data.user_id })
+      dispatch({ type: types.SIGN_UP, payload: response.data })
     );
+  }
 };
 
 export const getComplimentActionCreator = (user, tag) => {
+  return function(dispatch){
   const URL = `/compliments?user=${user}`;
   const body = { user };
   if (tag) {
@@ -40,10 +44,11 @@ export const getComplimentActionCreator = (user, tag) => {
   }
   axios.get(URL, body).then((response) =>
     dispatch({
-      type: type.GET_COMPLIMENT,
+      type: types.GET_COMPLIMENT,
       payload: response.data.complimentsList,
     })
   );
+  }
 };
 
 export const postComplimentActionCreator = (
@@ -52,36 +57,52 @@ export const postComplimentActionCreator = (
   sender,
   message
 ) => {
+
+  return function(dispatch) {
   const URL = `/compliments?user=${user}`;
   const body = { category, sender, message };
-  axios.post(URL, body).then((response) =>
+  axios.post(URL, body).then((response) => {
+    console.log(response)
     dispatch({
-      type: type.POST_COMPLIMENT,
+      type: types.POST_COMPLIMENT,
       payload: response.data.compliment,
     })
+  }
   );
+  }
 };
 
 export const deleteComplimentActionCreator = (user, id) => {
+  return function(dispatch){
   axios
     .delete(`/compliments?user=${user}&id=${id}`)
     .then((response) =>
-      dispatch({ type: type.DELETE_COMPLIMENT, payload: id })
+      dispatch({ type: types.DELETE_COMPLIMENT, payload: id })
     );
+  }
 };
 export const patchComplimentActionCreator = (
+  // user,
+  // id,
+  // message,
+  // sender,
+  // category
   user,
   id,
-  message,
-  sender,
   category
 ) => {
+  return function(dispatch){
   const URL = `/compliments?user=${user}&id=${id}`;
-  const body = { message, sender, category };
-  axios.patch(URL, body).then((response) =>
+  // const body = { message, sender, category };
+  const body = { category };
+  axios.patch(URL, body).then((response) => {
+    console.log(response);
     dispatch({
-      type: type.PATCH_COMPLIMENT,
+      type: types.PATCH_COMPLIMENT,
       payload: response.data.compliment,
     })
+  }
+
   );
+  }
 };
